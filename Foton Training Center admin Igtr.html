@@ -107,8 +107,9 @@
     const username = form.querySelector("input[type='text']").value;
     const password = form.querySelector("input[type='password']").value;
 
-    if (username === "admin" && password === "1234") {
-      alert("Login berhasil! Selamat datang, " + username);
+   if (username === "admin" && password === "1234") {
+  window.location.href = "dashboard.html";
+}
       // Bisa redirect ke halaman lain: window.location.href = "dashboard.html";
     } else {
       alert("Login gagal. Username atau password salah.");
