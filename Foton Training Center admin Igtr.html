@@ -1,7 +1,8 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
-   <meta http-equiv="refresh" content="0; URL='Foton%20Training%20Center%20admin%20lgtr.html'" />
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FOTON Training Center</title>
   <!-- Bootstrap CDN -->
@@ -50,9 +51,9 @@
           <li class="nav-item"><a class="nav-link" href="#">Jadwal Training</a></li>
           <li class="nav-item"><a class="nav-link" href="#">Form Permintaan Training</a></li>
         </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="text" placeholder="Username">
-          <input class="form-control me-2" type="password" placeholder="Password">
+        <form id="loginForm" class="d-flex">
+          <input class="form-control me-2" type="text" id="username" placeholder="Username">
+          <input class="form-control me-2" type="password" id="password" placeholder="Password">
           <button class="btn btn-outline-success" type="submit">Login</button>
         </form>
       </div>
@@ -97,27 +98,18 @@
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Login Script -->
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+     if (username === "admin" && password === "1234") {
+  window.location.href = "dashboard.html";}
+        alert("Login gagal. Username atau password salah.");
+      }
+    });
+  </script>
 </body>
 </html>
-<script>
-  const form = document.querySelector("form");
-  form.addEventListener("submit", function (e) {
-    e.preventDefault(); // Hindari reload
-
-    const username = form.querySelector("input[type='text']").value;
-    const password = form.querySelector("input[type='password']").value;
-
-   if (username === "admin" && password === "1234") {
-  window.location.href = "dashboard.html";
-}
-      // Bisa redirect ke halaman lain: window.location.href = "dashboard.html";
-    } else {
-      alert("Login gagal. Username atau password salah.");
-    }
-  });
-</script>
-<form id="loginForm">
-  <input type="text" id="username" placeholder="Username">
-  <input type="password" id="password" placeholder="Password">
-  <button type="submit">Login</button>
-</form>
