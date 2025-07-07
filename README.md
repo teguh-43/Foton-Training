@@ -107,7 +107,8 @@
       const password = document.getElementById("password").value;
       if (username === "admin" && password === "1234") {
         alert("Login berhasil! Selamat datang, " + username);
-      } else {
+      } else {if (username === "admin" && password === "1234") {
+  window.location.href = "dashboard.html";
         alert("Login gagal. Username atau password salah.");
       }
     });
